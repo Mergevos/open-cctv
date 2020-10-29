@@ -27,17 +27,17 @@ CCTV_Create(Float: x, Float: y,  Float: z, Float: rotX, Float: rotY, Float: rotZ
 ```
 
 ```
-x - The X coordinate of the camera.  
-y - The Y coordinate of the camera.  
-z - The Z coordinate of the camera. 
-rotX - The X rotation of the camera.  
-rotY - The Y rotation of the camera.  
-rotZ - The Z rotation of the camera. 
-lookX - The X coordinate of the camera looking.  
-lookY - The Y coordinate of the camera looking.  
-lookX - The Z coordinate of the camera looking.  
-virtualworld - The virtualworld of the camera.  
-interiorid - The interior of the camera.
+x - The X coordinate of the camera
+y - The Y coordinate of the camera
+z - The Z coordinate of the camera
+rotX - The X rotation of the camera
+rotY - The Y rotation of the camera
+rotZ - The Z rotation of the camera
+lookX - The X coordinate of the camera looking
+lookY - The Y coordinate of the camera looking
+lookX - The Z coordinate of the camera looking
+virtualworld - The virtualworld of the camera
+interiorid - The interior of the camera
 ```
 
 
