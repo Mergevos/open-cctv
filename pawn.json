@@ -7,5 +7,8 @@
 		"sampctl/samp-stdlib",
 		"samp-incognito/samp-streamer-plugin",
 		"pawn-lang/YSI-Includes@5.x"
+	],
+	"contributors": [
+		"polygxn"
 	]
 }
