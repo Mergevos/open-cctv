@@ -2,7 +2,7 @@
 
 [![Mergevos](https://img.shields.io/badge/Mergevos-samp--cctv-2f2f2f.svg?style=for-the-badge)](https://github.com/Mergevos/samp-cctv)
 
-This library allows you to create a CCTV cameras and wathc it.
+This library allows you to create a CCTV cameras and watch it.
 
 ## Installation
 
