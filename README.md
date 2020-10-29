@@ -40,6 +40,36 @@ virtualworld - The virtualworld of the camera
 interiorid - The interior of the camera
 ```
 
+This function destroys a camera.
+
+```c
+CCTV_Destroy(cctvid)
+```
+
+```
+cctvid - ID of the camera
+```
+
+Makes a player watch the camera
+
+```c
+CCTV_Watch(playerid, cctvid)
+```
+
+```
+playerid - Playerid we are making to watch the camera
+cctvid - Camera ID
+```
+
+```c
+CCTV_Unwatch(playerid, cctvid)
+```
+
+```
+Makes a player stop watching the camera
+playerid"> Playerid we are making to unwatch the camera
+cctvid - Camera ID 
+```
 
 ## Testing
 
