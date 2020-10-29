@@ -18,21 +18,25 @@ Include in your code and begin using the library:
 
 ## Usage
 
-<summary> Creates a camera</summary>
-<param name="x"> The X coordinate of the camera</param>
-<param name="y"> The Y coordinate of the camera</param>
-<param name="z"> The Z coordinate of the camera</param>
-<param name="rotX"> The X rotation of the camera</param>
-<param name="rotY"> The Y rotation of the camera</param>
-<param name="rotZ"> The Z rotation of the camera</param>
-<param name="lookX"> The X coordinate of the camera looking</param>
-<param name="lookY"> The Y coordinate of the camera looking</param>
-<param name="lookX"> The Z coordinate of the camera looking</param>
-<param name="virtualworld"> The virtualworld of the camera</param>
-<param name="interiorid"> The interior of the camera</param>
+There're not too many functions. They're listed below.
 
+This function creates a camera.
 
-stock CCTV_Create(Float: x, Float: y,  Float: z, Float: rotX, Float: rotY, Float: rotZ, Float: lookX, Float: lookY, Float: lookZ, virtualworld, interiorid)
+```c
+CCTV_Create(Float: x, Float: y,  Float: z, Float: rotX, Float: rotY, Float: rotZ, Float: lookX, Float: lookY, Float: lookZ, virtualworld, interiorid)
+```
+
+`x - The X coordinate of the camera.
+y - The Y coordinate of the camera.
+z - The Z coordinate of the camera.
+rotX - The X rotation of the camera.
+rotY - The Y rotation of the camera.
+rotZ - The Z rotation of the camera.
+lookX - The X coordinate of the camera looking.
+lookY - The Y coordinate of the camera looking.
+lookX - The Z coordinate of the camera looking.
+virtualworld - The virtualworld of the camera.
+interiorid - The interior of the camera.`
 
 
 ## Testing
