@@ -26,7 +26,7 @@ This function creates a camera.
 CCTV_Create(Float: x, Float: y,  Float: z, Float: rotX, Float: rotY, Float: rotZ, Float: lookX, Float: lookY, Float: lookZ, virtualworld, interiorid)
 ```
 
-``
+```
 x - The X coordinate of the camera.  
 y - The Y coordinate of the camera.  
 z - The Z coordinate of the camera. 
@@ -38,7 +38,7 @@ lookY - The Y coordinate of the camera looking.
 lookX - The Z coordinate of the camera looking.  
 virtualworld - The virtualworld of the camera.  
 interiorid - The interior of the camera.
-``  
+```
 
 
 ## Testing
