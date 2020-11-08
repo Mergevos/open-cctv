@@ -1,6 +1,7 @@
 #include <a_samp>
-#include <original-zcmd>
+#define CCTV_NO_LOG
 #include "./cctv.inc"
+
 
 main()
 {

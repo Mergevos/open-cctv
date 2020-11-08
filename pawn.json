@@ -1,14 +1,13 @@
 {
 	"user": "Mergevos",
 	"repo": "samp-cctv",
-	"entry": "test.pwn",
-	"output": "test.amx",
+	"contributors": [
+		"polygxn"
+	],
 	"dependencies": [
 		"sampctl/samp-stdlib",
 		"samp-incognito/samp-streamer-plugin",
-		"pawn-lang/YSI-Includes@5.x"
-	],
-	"contributors": [
-		"polygxn"
+		"pawn-lang/YSI-Includes@5.x",
+		"Mergevos/samp-logging"
 	]
 }
