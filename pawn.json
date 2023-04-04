@@ -1,13 +1,14 @@
 {
 	"user": "Mergevos",
-	"repo": "samp-cctv",
+	"repo": "open-cctv",
 	"contributors": [
 		"polygxn"
 	],
 	"dependencies": [
-		"sampctl/samp-stdlib",
-		"samp-incognito/samp-streamer-plugin",
-		"pawn-lang/YSI-Includes@5.x",
-		"Mergevos/samp-logging"
+		"openmultiplayer/omp-stdlib",
+		"pawn-lang/samp-stdlib@open.mp",
+		"pawn-lang/pawn-stdlib@open.mp",
+		"samp-incognito/samp-streamer-plugin:v2.9.6",
+		"pawn-lang/YSI-Includes@5.x"
 	]
 }
