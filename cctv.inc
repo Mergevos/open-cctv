@@ -81,7 +81,7 @@ stock bool: CCTV_IsPlayerWatching(playerid, cctvid)
  * <param name="cctvid"> The cctv we are checking if player is near to</param>
  */ 
 
-stock CCTV_IsPlayerNear(playerid, cctvid, Float: range = 2.0)
+stock bool: CCTV_IsPlayerNear(playerid, cctvid, Float: range = 2.0)
 {
     return IsPlayerInRangeOfPoint(playerid, range, cctv_Pos[cctvid][0], cctv_Pos[cctvid][1], cctv_Pos[cctvid][2]);
 
@@ -141,16 +141,16 @@ stock CCTV_Create(Float: x, Float: y,  Float: z, Float: rotX, Float: rotY, Float
  * <param name="cctvid"> Camera ID</param>
  */ 
 
-stock CCTV_Watch(playerid, cctvid)
+stock bool: CCTV_Watch(playerid, cctvid)
 {
     if(!Iter_Contains(cctv_Iter, cctvid) || CCTV_IsPlayerWatchingAny(playerid)) {
-        return -1;
+        return false;
     }
     SetPlayerCameraPos(playerid, cctv_Pos[cctvid][0], cctv_Pos[cctvid][1], cctv_Pos[cctvid][2]);
     SetPlayerCameraLookAt(playerid, cctv_LookPos[cctvid][0], cctv_LookPos[cctvid][1], cctv_LookPos[cctvid][2], CAMERA_MOVE);
     TogglePlayerControllable(playerid, false);
     SetPVarInt(playerid, "IsWatching", cctvid);
-    return 1;
+    return true;
 }
 
 /*
@@ -159,15 +159,15 @@ stock CCTV_Watch(playerid, cctvid)
  * <param name="cctvid"> Camera ID</param>
  */ 
 
-stock CCTV_Unwatch(playerid)
+stock bool: CCTV_Unwatch(playerid)
 {
     if(!CCTV_IsPlayerWatchingAny(playerid)) {
-        return -1;
+        return false;
     }
     TogglePlayerControllable(playerid, true);
     SetCameraBehindPlayer(playerid);
     SetPVarInt(playerid, "IsWatching", -1);
-    return 1;
+    return true;
 }
 
 /*
@@ -175,13 +175,13 @@ stock CCTV_Unwatch(playerid)
  * <param name="cctvid"> Camera ID</param>
  */ 
 
-stock CCTV_Destroy(cctvid)
+stock bool: CCTV_Destroy(cctvid)
 {
     if(!Iter_Contains(cctv_Iter, cctvid)) {
-        return -1;
+        return false;
     }
     Iter_Remove(cctv_Iter, cctvid);
     DestroyDynamicObject(cctv_Handle[cctvid]);
-    return 1;
+    return true;
 }
 
