@@ -1,15 +1,15 @@
 # samp-cctv
 
-[![Mergevos](https://img.shields.io/badge/Mergevos-samp--cctv-2f2f2f.svg?style=for-the-badge)](https://github.com/Mergevos/samp-cctv)
+[![Mergevos](https://img.shields.io/badge/Mergevos-open--cctv-2f2f2f.svg?style=for-the-badge)](https://github.com/Mergevos/open-cctv)
 
-This library allows you to create a CCTV cameras and watch it.
+This library allows you to create a CCTV cameras and watch them.
 
 ## Installation
 
 Simply install to your project:
 
 ```bash
-sampctl package install Mergevos/samp-cctv
+sampctl package install Mergevos/open-cctv
 ```
 
 Include in your code and begin using the library:
@@ -20,14 +20,15 @@ Include in your code and begin using the library:
 
 ## Usage
 
-There're not too many functions. They're listed below.
+There are not too many functions. They are listed below.
 
 This function creates a camera.
 
 ```c
-CCTV_Create(Float: x, Float: y,  Float: z, Float: rotX, Float: rotY, Float: rotZ, Float: lookX, Float: lookY, Float: lookZ, virtualworld, interiorid)
+bool: CCTV_Create(Float: x, Float: y,  Float: z, Float: rotX, Float: rotY, Float: rotZ, Float: lookX, Float: lookY, Float: lookZ, virtualworld, interiorid)
 ```
 
+Where arguments above are:
 ```
 x - The X coordinate of the camera
 y - The Y coordinate of the camera
