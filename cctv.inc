@@ -54,8 +54,12 @@ hook OnPlayerConnect(playerid)
 
 //-------------------------------------------
 /*
- * <summary> Checks if player is watching any of the cameras</summary>
- * <param name="playerid"> Player whom we are checking</param>
+ * <summary> Checks if player is watching any camera.</summary>
+ * <param name="playerid"> Player whom we are checking.</param>
+ * <param name="cctvid"> Camera watched by player.</param>
+ * <seealso name="CCTV_IsPlayerWatching" />
+ * <seealso name="CCTV_IsPlayerNear" />
+ * <returns>Returns true if player is watching the camera, otherwise false.</returns>
  */ 
 
 stock bool: CCTV_IsPlayerWatchingAny(playerid)
@@ -64,23 +68,26 @@ stock bool: CCTV_IsPlayerWatchingAny(playerid)
 }
 
 /*
- * <summary> Checks if player is watching the cameras</summary>
- * <param name="playerid"> Player whom we are checking</param>
- * <param name="cctvid"> Cctv which is watched by player</param>
+ * <summary> Checks if player is watching specified camera.</summary>
+ * <param name="playerid"> Player whom we are checking.</param>
+ * <param name="cctvid"> The camera we are checking if player is watching it.</param>
+ * <seealso name="CCTV_IsPlayerWatchingAny" />
+ * <seealso name="CCTV_IsPlayerNear" />
+ * <returns>Returns true if player is watching the camera, otherwise false.</returns>
  */ 
-
-
 stock bool: CCTV_IsPlayerWatching(playerid, cctvid)
 {
     return (GetPVarInt(playerid, "IsWatching") == cctvid) ? (true) : (false);
 }
 
 /*
- * <summary> Checks if player is near the camera</summary>
- * <param name="playerid"> Player whom we are checking</param>
- * <param name="cctvid"> The cctv we are checking if player is near to</param>
+ * <summary> Checks if player is near the camera.</summary>
+ * <param name="playerid"> Player whom we are checking.</param>
+ * <param name="cctvid"> The camera we are checking if player is near to.</param>
+ * <seealso name="CCTV_IsPlayerWatching" />
+ * <seealso name="CCTV_IsPlayerWatchingAny" />
+ * <returns>Returns true if player is near specified camera, otherwise false.</returns>
  */ 
-
 stock bool: CCTV_IsPlayerNear(playerid, cctvid, Float: range = 2.0)
 {
     return IsPlayerInRangeOfPoint(playerid, range, cctv_Pos[cctvid][0], cctv_Pos[cctvid][1], cctv_Pos[cctvid][2]);
@@ -90,20 +97,21 @@ stock bool: CCTV_IsPlayerNear(playerid, cctvid, Float: range = 2.0)
 //----------------------------------------
 
 /*
- * <summary> Creates a camera</summary>
- * <param name="x"> The X coordinate of the camera</param>
- * <param name="y"> The Y coordinate of the camera</param>
- * <param name="z"> The Z coordinate of the camera</param>
- * <param name="rotX"> The X rotation of the camera</param>
- * <param name="rotY"> The Y rotation of the camera</param>
- * <param name="rotZ"> The Z rotation of the camera</param>
- * <param name="lookX"> The X coordinate of the camera looking</param>
- * <param name="lookY"> The Y coordinate of the camera looking</param>
- * <param name="lookX"> The Z coordinate of the camera looking</param>
- * <param name="virtualworld"> The virtualworld of the camera</param>
- * <param name="interiorid"> The interior of the camera</param>
+ * <summary> Creates a camera.</summary>
+ * <param name="x"> The X coordinate of the camera.</param>
+ * <param name="y"> The Y coordinate of the camera.</param>
+ * <param name="z"> The Z coordinate of the camera.</param>
+ * <param name="rotX"> The X rotation of the camera.</param>
+ * <param name="rotY"> The Y rotation of the camera.</param>
+ * <param name="rotZ"> The Z rotation of the camera.</param>
+ * <param name="lookX"> The X coordinate of the camera looking.</param>
+ * <param name="lookY"> The Y coordinate of the camera looking.</param>
+ * <param name="lookX"> The Z coordinate of the camera looking.</param>
+ * <param name="virtualworld"> The virtualworld of the camera.</param>
+ * <param name="interiorid"> The interior of the camera.</param>
+ * <seealso name="CCTV_Destroy" />
+ * <returns>Returns camera id if function is executed successfully, otherwise -1, meaning the camera hasn't been created for some reason.</returns>
  */ 
-
 stock CCTV_Create(Float: x, Float: y,  Float: z, Float: rotX, Float: rotY, Float: rotZ, Float: lookX, Float: lookY, Float: lookZ, virtualworld, interiorid)
 {
     new 
@@ -136,11 +144,12 @@ stock CCTV_Create(Float: x, Float: y,  Float: z, Float: rotX, Float: rotY, Float
 }
 
 /*
- * <summary> Makes a player watch the camera</summary>
- * <param name="playerid"> Playerid we are making to watch the camera</param>
- * <param name="cctvid"> Camera ID</param>
+ * <summary> Makes a player watch the camera.</summary>
+ * <param name="playerid"> Player we are making to watch from the camera.</param>
+ * <param name="cctvid"> Camera we are starting to watch.</param>
+ * <seealso name="CCTV_Unwatch" />
+ * <returns>Returns true if function is executed successfully, otherwise false, meaning the specified player is watching from a camera or specified camera doesn't exist.</returns>
  */ 
-
 stock bool: CCTV_Watch(playerid, cctvid)
 {
     if(!Iter_Contains(cctv_Iter, cctvid) || CCTV_IsPlayerWatchingAny(playerid)) {
@@ -154,11 +163,12 @@ stock bool: CCTV_Watch(playerid, cctvid)
 }
 
 /*
- * <summary> Makes a player stop watching the camera</summary>
- * <param name="playerid"> Playerid we are making to unwatch the camera</param>
- * <param name="cctvid"> Camera ID</param>
+ * <summary> Makes a player stop watching the camera.</summary>
+ * <param name="playerid"> Player we are making to unwatch the camera.</param>
+ * <param name="cctvid"> Camera we are stooping to watch.</param>
+ * <seealso name="CCTV_Watch" />
+ * <returns>Returns true if function is executed successfully, otherwise false, meaning the specified player isn't watching from any camera.</returns>
  */ 
-
 stock bool: CCTV_Unwatch(playerid)
 {
     if(!CCTV_IsPlayerWatchingAny(playerid)) {
@@ -171,10 +181,11 @@ stock bool: CCTV_Unwatch(playerid)
 }
 
 /*
- * <summary> Destroys the camera</summary>
- * <param name="cctvid"> Camera ID</param>
+ * <summary> Destroys the camera.</summary>
+ * <param name="cctvid"> Camera we are destroying.</param>
+ * <seealso name="CCTV_Create" />
+ * <returns>Returns true if function is executed successfully, otherwise false, meaning the specified camera doesn't exist.</returns>
  */ 
-
 stock bool: CCTV_Destroy(cctvid)
 {
     if(!Iter_Contains(cctv_Iter, cctvid)) {
@@ -184,4 +195,3 @@ stock bool: CCTV_Destroy(cctvid)
     DestroyDynamicObject(cctv_Handle[cctvid]);
     return true;
 }
-
