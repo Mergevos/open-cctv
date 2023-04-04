@@ -1,4 +1,4 @@
-# samp-cctv
+# open-cctv
 
 [![Mergevos](https://img.shields.io/badge/Mergevos-open--cctv-2f2f2f.svg?style=for-the-badge)](https://github.com/Mergevos/open-cctv)
 
